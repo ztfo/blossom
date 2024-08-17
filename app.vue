@@ -19,9 +19,18 @@ import { ref } from 'vue'
 
 // Word list with missing vowels
 const words = ref([
-  { word: "_bout", correctAnswer: "a", options: ["a", "e", "i", "o"] },
-  { word: "p_ncil", correctAnswer: "e", options: ["a", "e", "i", "o"] },
-  { word: "d_g", correctAnswer: "o", options: ["a", "o", "i", "u"] },
+  { "word": "bloss_m", "correctAnswer": "o", "options": ["a", "e", "i", "o"] },
+  { "word": "bac_n", "correctAnswer": "o", "options": ["a", "e", "o", "u"] },
+  { "word": "tex_s", "correctAnswer": "a", "options": ["a", "e", "i", "o"] },
+  { "word": "lem_n", "correctAnswer": "o", "options": ["a", "e", "i", "o"] },
+  { "word": "sof_", "correctAnswer": "a", "options": ["a", "e", "i", "o"] },
+  { "word": "penc_l", "correctAnswer": "i", "options": ["a", "e", "i", "o"] },
+  { "word": "probl_m", "correctAnswer": "e", "options": ["a", "e", "i", "o"] },
+  { "word": "circ_s", "correctAnswer": "u", "options": ["a", "e", "i", "u"] },
+  { "word": "seld_m", "correctAnswer": "o", "options": ["a", "e", "i", "o"] },
+  { "word": "cust_m", "correctAnswer": "o", "options": ["a", "e", "i", "o"] },
+  { "word": "sal_d", "correctAnswer": "a", "options": ["a", "e", "i", "o"] },
+  { "word": "doz_n", "correctAnswer": "e", "options": ["a", "e", "i", "o"] },
 ])
 
 // State variables

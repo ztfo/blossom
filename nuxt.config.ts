@@ -4,11 +4,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   target: 'static',
   generate: {
-    fallback: true
+    fallback: true 
   },
   build: {
     loaders: {
-      pugPlain: 'pug-plain-loader',
+      pugPlain: 'pug-plain-loader', 
     },
+  },
+  app: {
+    baseURL: '/blossom/',
   },
 })
