@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    baseURL: '/blossom/',
+    baseURL: '/',
   },
   hooks: {
     'generate:done': () => {
