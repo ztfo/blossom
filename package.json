@@ -6,7 +6,7 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "postgenerate": "touch .output/public/.nojekyll",
-    "deploy": "npm run generate && npm run postgenerate && gh-pages -d .output/public",
+    "deploy": "npm run generate && npm run postgenerate && npx gh-pages -d .output/public --dotfiles",
     "dev": "nuxt dev",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
