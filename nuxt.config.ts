@@ -1,12 +1,12 @@
-import { existsSync, writeFileSync } from 'fs'
+import { existsSync, writeFileSync, cpSync } from 'fs'
+import { resolve } from 'path'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   target: 'static',
   generate: {
-    dir: 'dist',
-    fallback: true 
+    fallback: true
   },
   build: {
     loaders: {
@@ -18,7 +18,12 @@ export default defineNuxtConfig({
   },
   hooks: {
     'generate:done': () => {
-      const nojekyllPath = 'dist/.nojekyll'
+      const sourceDir = resolve(__dirname, '.output/public')
+      const distDir = resolve(__dirname, 'dist')
+
+      cpSync(sourceDir, distDir, { recursive: true })
+
+      const nojekyllPath = resolve(distDir, '.nojekyll')
       if (!existsSync(nojekyllPath)) {
         writeFileSync(nojekyllPath, '')
       }
