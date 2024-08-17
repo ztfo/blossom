@@ -17,7 +17,7 @@
 <script setup>
 import { ref } from 'vue'
 
-// Word list with missing vowels
+// todo: split into separate file
 const words = ref([
   { "word": "bloss_m", "correctAnswer": "o", "options": ["a", "e", "i", "o"] },
   { "word": "bac_n", "correctAnswer": "o", "options": ["a", "e", "o", "u"] },
@@ -33,7 +33,6 @@ const words = ref([
   { "word": "doz_n", "correctAnswer": "e", "options": ["a", "e", "i", "o"] },
 ])
 
-// State variables
 const currentWordIndex = ref(0)
 const currentWord = ref(words.value[currentWordIndex.value])
 const showFeedback = ref(false)
