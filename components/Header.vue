@@ -1,19 +1,17 @@
 <template lang="pug">
 .header
     button(@click="goToMainMenu") Main Menu
-    button(@click="restartGame") Restart
+    button(@click="restartGame") Restart Game
 </template>
 
 <script setup>
-const restartGame = () => {
-    // Logic to restart the game, such as resetting state
-};
+const emit = defineEmits(["menu", "restart"]);
 
 const goToMainMenu = () => {
-    navigateTo('/');
+  emit("menu");
+};
+
+const restartGame = () => {
+  emit("restart");
 };
 </script>
-
-<style lang="scss">
-
-</style>

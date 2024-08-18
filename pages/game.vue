@@ -1,12 +1,26 @@
-<template lang="pug">
-    div
-      GameControls(:difficulty="difficulty")
+<template>
+    <Header @menu="goToMainMenu" @restart="restartGame" />
+    <GameBoard :difficulty="difficulty" @gameOver="handleGameOver" />
 </template>
 
 <script setup>
-import GameControls from '~/components/GameControls.vue';
-import { useRoute } from 'vue-router';
+import Header from '~/components/Header.vue'
+import GameBoard from '~/components/GameBoard.vue'
+import { useRouter, useRoute } from 'vue-router'
+import { ref } from 'vue'
 
-const route = useRoute();
-const difficulty = route.query.difficulty || 'easy';
+const router = useRouter()
+const route = useRoute()
+const difficulty = ref(route.query.difficulty || 'easy')
+
+const goToMainMenu = () => {
+    router.push('/')
+}
+
+const restartGame = () => {
+    router.replace({ path: '/game', query: { difficulty: difficulty.value } })
+}
+
+const handleGameOver = () => {
+}
 </script>
