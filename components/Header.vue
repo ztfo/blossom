@@ -1,7 +1,7 @@
 <template lang="pug">
 .header
-    button(@click="goToMainMenu") Main Menu
-    button(@click="restartGame") Restart Game
+    button(@click="goToMainMenu") Menu
+    button(@click="restartGame") Restart
 </template>
 
 <script setup>

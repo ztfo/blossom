@@ -8,20 +8,9 @@
 
 <script setup>
 import { ref } from "vue";
+import words from "~/data/words.json";
 
 const props = defineProps(["difficulty"]);
-
-const words = {
-  easy: [
-    { word: "cat", correctAnswer: "a", options: ["a", "e", "i", "o"] }
-  ],
-  medium: [
-    { word: "blossom", correctAnswer: "o", options: ["a", "e", "i", "o"] },
-  ],
-  hard: [
-    { word: "celebrate", correctAnswer: "e", options: ["a", "e", "i", "o"] },
-  ],
-};
 
 const currentWordIndex = ref(0);
 const currentWord = ref(words[props.difficulty][currentWordIndex.value]);

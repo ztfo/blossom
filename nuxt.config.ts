@@ -16,6 +16,9 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/blossom/',
   },
+  css: [
+    '~/assets/global.css',
+  ],
   hooks: {
     'generate:done': () => {
       const sourceDir = resolve(__dirname, '.output/public')
