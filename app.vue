@@ -1,5 +1,5 @@
 <template lang="pug">
-.app
+.app.container.mx-auto.p-4
   .nav-icon bloss🌸m
   NuxtPage()
 </template>

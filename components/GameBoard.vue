@@ -1,9 +1,8 @@
 <template lang="pug">
-.game-board
-  h2 {{ currentWord.word }}
-  div.choices
-    button(v-for="(option, index) in currentWord.options" :key="index" @click="checkAnswer(option)") {{ option }}
-  p(v-if="showFeedback") {{ feedbackMessage }}
+div.game-board.text-center.py-8
+  h2.text-2xl.font-semibold.mb-6 {{ currentWord.word }}
+  div(v-for="(option, index) in currentWord.options" :key="index" class="flex justify-center flex-wrap space-x-4 mb-4")
+    button(@click="checkAnswer(option)" class="bg-green-500 text-white py-2 px-4 rounded shadow-lg hover:bg-green-600") {{ option }}
 </template>
 
 <script setup>
