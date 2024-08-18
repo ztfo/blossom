@@ -12,6 +12,14 @@ export default defineNuxtConfig({
     loaders: {
       pugPlain: 'pug-plain-loader',
     },
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {},
+        },
+      },
+    },
   },
   app: {
     baseURL: '/blossom/',
