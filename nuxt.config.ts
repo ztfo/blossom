@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   generate: {
     fallback: true
   },
+  css: [
+    '~/assets/global.css',
+  ],  
   build: {
     loaders: {
       pugPlain: 'pug-plain-loader',
@@ -24,20 +27,4 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/blossom/',
   },
-  css: [
-    '~/assets/global.css',
-  ],
-  hooks: {
-    'generate:done': () => {
-      const sourceDir = resolve(__dirname, '.output/public')
-      const distDir = resolve(__dirname, 'dist')
-
-      cpSync(sourceDir, distDir, { recursive: true })
-
-      const nojekyllPath = resolve(distDir, '.nojekyll')
-      if (!existsSync(nojekyllPath)) {
-        writeFileSync(nojekyllPath, '')
-      }
-    }
-  }
 })
